@@ -161,7 +161,7 @@ Poiščimo množico točk, ki je bližje središču tarče kot kateremukoli izme
             \addplot[red, domain=-1:1, samples=100]({x},{((1-x^2)/2});
             \addplot[blue, domain=-1:1, samples=100]({x},{((x^2-1)/2});
             \addplot[green, domain=-1:1, samples=100]({(1-x^2)/2},{x});
-            \addplot[yellow ,domain=-1:1, samples=100]({(x^2-1)/2},{x});
+            \addplot[orange ,domain=-1:1, samples=100]({(x^2-1)/2},{x});
         \end{axis}
     \end{tikzpicture}
     \caption{Roboni pogoji pri $a=1$}
@@ -244,7 +244,7 @@ Izračunati ploščino območja le za enega izmed osmih trikotnikov.
             \addplot[red, domain=-1:1, samples=100]({x},{((1-x^2)/2});
             \addplot[blue, domain=-1:1, samples=100]({x},{((x^2-1)/2});
             \addplot[green, domain=-1:1, samples=100]({(1-x^2)/2},{x});
-            \addplot[yellow ,domain=-1:1, samples=100]({(x^2-1)/2},{x});
+            \addplot[orange ,domain=-1:1, samples=100]({(x^2-1)/2},{x});
         \end{axis}
     \end{tikzpicture}
     \caption{Simetrije}
@@ -290,7 +290,7 @@ Sedaj lahko izračunamo ploščino območja. Najprej izračunamo območje pod po
 \begin{align*}
     \Bigg| \int_{-\frac{a}{2}}^{0} \min \{ x, \tfrac{x^2}{a} - \tfrac{a}{4} \} \, \mathrm{d}x \Bigg|
     &= \Bigg| \int_{-\frac{a}{2}}^{\frac{a(1-\sqrt{2})}{2}} x \, \mathrm{d}x + \int_{\frac{a(1-\sqrt{2})}{2}}^{0} \tfrac{x^2}{a} - \tfrac{a}{4} \, \mathrm{d}x \Bigg|\\
-    &= \frac{a^2}{24}(4\sqrt{2}-5)
+    &= \frac{a^2}{3}(4\sqrt{2}-2)
 \end{align*}
 Da dobimo ploščino modrega območja, od ploščine trikotnika odštejemo dobljeni integral
 
