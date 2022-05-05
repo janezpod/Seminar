@@ -112,7 +112,7 @@ tarča. Ker so zadetki porazdeljeni enakomerno, ima gostoto
 
 Gostota $f(x,y)$ zvezna skoraj povsod, saj ima ,po primeru \eqref{pri} in trditvi 
 \eqref{trd}, množica točk nezveznosti funkcije $f$ mero $0$.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[scale=1]
         \begin{axis}[
@@ -182,7 +182,7 @@ Torej je ustrezna verjetnost, da točka pade bližje središču kot robu tače
 \end{align*}
 
 kar je ravno ploščina ombočja v modrem ulomljeni s ploščino celotnega kvadrata.
-    \begin{figure}[!h]
+    \begin{figure}[!ht]
         \centering
         \begin{tikzpicture}[scale=1]
             \begin{axis}[
@@ -213,7 +213,7 @@ kar je ravno ploščina ombočja v modrem ulomljeni s ploščino celotnega kvadr
 
 Ploščino najlažje izračunamo tako, da opazimo simetrijo rotacij in simetrijo zrcaljenja.
 Izračunali bomo ploščino le enega izmed osmih trikotnikov.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[scale=1]
         \begin{axis}[
@@ -242,7 +242,7 @@ Izračunali bomo ploščino le enega izmed osmih trikotnikov.
     \caption{Simetrije}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[scale=1]
         \begin{axis}[
@@ -296,5 +296,28 @@ tarče kot njenemu robu enaka
 
 \section{Simulacija}
 
+Da rezultat preverimo še ekspirimentalno, napišemo simulacijo v Pythonu
+\begin{verbatim}
+    import random
+    import math
+    random.seed(10)
+    
+    blizje_srediscu = 0
+    n=10
+    
+    for i in range(10**n):
+        x = random.uniform(-1, 1)
+        y = random.uniform(-1, 1)
+        do_sredisca = math.sqrt(x**2 + y**2)
+        if (do_sredisca < 1 - x and do_sredisca < 1 + y and
+            do_sredisca < 1 + x  and do_sredisca < 1 - y):
+            blizje_srediscu += 1
+    
+        razmerje = blizje_srediscu / 10**n
+
+    print('Približek verjetnosti je ', razmerje)
+\end{verbatim}
+
+Spodnja tabela prikazuje približke izračunane s simulacijo ter njihovo absolutno in relativno napako.
 
 \end{document} 
