@@ -8,11 +8,11 @@
 \usepackage[slovene]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{bbm}
-
+\usepackage{pythonhighlight}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usepgfplotslibrary{fillbetween}
 \usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
 \pgfplotsset{compat=newest}
 
 \linespread{1.2}
@@ -297,13 +297,14 @@ tarče kot njenemu robu enaka
 \section{Simulacija}
 
 Da rezultat preverimo še ekspirimentalno, napišemo simulacijo v Pythonu
-\begin{verbatim}
+
+\begin{python}
     import random
     import math
     random.seed(10)
     
     blizje_srediscu = 0
-    n=10
+    n= 3
     
     for i in range(10**n):
         x = random.uniform(-1, 1)
@@ -314,10 +315,24 @@ Da rezultat preverimo še ekspirimentalno, napišemo simulacijo v Pythonu
             blizje_srediscu += 1
     
         razmerje = blizje_srediscu / 10**n
+    
+    print('Priblizek verjetnosti je ', razmerje)
+\end{python}
 
-    print('Približek verjetnosti je ', razmerje)
-\end{verbatim}
-
-Spodnja tabela prikazuje približke izračunane s simulacijo ter njihovo absolutno in relativno napako.
+Spodnja tabela prikazuje približke izračunane s simulacijo ter njihovo absolutno in relativno
+napako na devet mest natančno.
+\begin{table}[!ht]
+    \caption{Rezultati simulacije}
+    \begin{tabular}{|c|l|l|l|}
+    \hline
+    \textbf{Število točk} & \textbf{Vrednost simulacije} & \textbf{Absolutna napaka} & \textbf{Relativna napaka} \\ \hline
+    $10^3$                & 0.229                        & 0.010048584               & 0.045894127               \\ \hline
+    $10^4$                & 0.2247                       & 0.005748584               & 0.026255067               \\ \hline
+    $10^5$                & 0.21732                      & 0.001631416               & 0.007451041               \\ \hline
+    $10^6$                & 0.218713                     & 0.000238416               & 0.001088899               \\ \hline
+    $10^7$                & 0.2187818                    & 0.000169616               & 0.000774674               \\ \hline
+    $10^8$                & 0.21904325                   & 0.000091834               & 0.000419426               \\ \hline
+    \end{tabular}
+    \end{table}
 
 \end{document} 
