@@ -3,7 +3,7 @@ import math
 random.seed(10)
 
 blizje_srediscu = 0
-n=5
+n= 9
 
 for i in range(10**n):
     x = random.uniform(-1, 1)
@@ -16,3 +16,16 @@ for i in range(10**n):
     razmerje = blizje_srediscu / 10**n
 
 print('Približek verjetnosti je ', razmerje)
+
+#+-----+----------  +
+#| n   | Rezultat   |        
+#+=====+==========  +
+#|  5  |            |
+#|  6  |            |
+#|  7  |            |
+#+----------------  +
+#|  8  |            |
+#|  9  |            |
+#|  10 |            |  
+#|-----+----------  +
+
