@@ -11,6 +11,8 @@
 
 \usepackage{pythonhighlight}
 
+% Če Visual Studio Code iz nekega razloga ne želi generirati PDF se plača poizkusiti tole
+
 % In the settings.json of your VSCode, paste the following to add pythontex in the tools section:
 
 % "latex-workshop.latex.tools": [
@@ -83,7 +85,6 @@ tarčo in da je točka zadetka porazdeljena enakomerno po tarči. Izračunaj ver
 bo naš strel zadel bližje središču tarče kot njenemu robu.
 
 \section{Definicje, trditve in izreki}
-
 Spodaj so definicje in trditve, ki smo jih spoznali pri Analizi 3, na katere se bomo sklicali tekom naloge.
 \begin{definicija}\label{def}
 Množica $ A \subseteq \R^n $ ima \emph{mero $0$}, če za za vsak $\varepsilon > 0$ obstaja največ števno mnogo
@@ -165,7 +166,7 @@ pade v neko Borelovo podmonožico $B \subseteq T_a$.
 \begin{align*}
     P\big((x,y) \in B\big)
     &= \iint\limits_{\R^2} f(x,y) \, \mathbbm{1}_{B} \, \mathrm{d}x\mathrm{d}y \\
-    &= \iint\limits_{B} f(x,y) \mathrm{d}x\mathrm{d}y
+    &= \iint\limits_{B} f(x,y) \, \mathrm{d}x\mathrm{d}y
 \end{align*}
 
 Poiščimo množico točk, ki je bližje središču tarče kot robu tarče.
@@ -301,7 +302,7 @@ Izračunali bomo ploščino le enega izmed osmih trikotnikov.
 \end{figure}
 
 Funkcijo $|(x,y)| < \frac{a}{2} - y$, ki opisuje vse točke, ki so bližje središču tarče kot
-zgornjemu robu preoblikujemo v 
+zgornjemu robu tarče preoblikujemo v 
 \begin{equation*}
     y = \frac{a}{4} - \frac{x^2}{a}
 \end{equation*}
