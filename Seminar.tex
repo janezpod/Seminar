@@ -8,7 +8,39 @@
 \usepackage[slovene]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{bbm}
+
 \usepackage{pythonhighlight}
+
+% In the settings.json of your VSCode, paste the following to add pythontex in the tools section:
+
+% "latex-workshop.latex.tools": [
+%     ... some code ...
+%     {
+%         "name": "pythontex",
+%         "command": "pythontex",
+%         "args": [
+%             "%DOC%"
+%         ]
+%     },
+%     ... some code ...
+% ]
+
+% Then add this to the recipes section:
+
+% "latex-workshop.latex.recipes": [
+%     ... some code ...
+%     {
+%         "name": "compile with pythontex enabled",
+%         "tools": [
+%             "pdflatex",
+%             "pythontex",
+%             "pdflatex"
+%         ]
+%     },
+%     ... some code ...
+% ]
+
+
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{intersections}
